@@ -131,7 +131,7 @@ function User({setUserLogged}) {
         {
           image ?
           (
-            <ProfilePic src={`https://blocodenotasonline.netlify.app/tmp/uploads/${image}`}  alt="Profile" />
+            <ProfilePic src={`https://cr-api-blocodenotas.onrender.com/tmp/uploads/${image}`}  alt="Profile" />
           )
           :
           (
