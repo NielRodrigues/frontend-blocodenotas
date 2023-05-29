@@ -12,7 +12,7 @@ const config = {
 
 export async function customers() {
 
-  const data = await axios.get(`${baseURL}/users`, config)
+  const data = await axios.get(`${baseURL}users`, config)
   .then(response => response.data)
   .catch(error => error.response.data)
 
@@ -20,7 +20,7 @@ export async function customers() {
 }
 
 export async function createCustomers(data) {
-  const responseData = axios.post(`${baseURL}/users`, data, config)
+  const responseData = axios.post(`${baseURL}users`, data, config)
     .then((response) => {
       const resp = "Cliente cadastrado com sucesso."
       return [resp, response.status]
@@ -34,7 +34,7 @@ export async function createCustomers(data) {
 }
 
 export async function login(data){
-  const responseData = axios.post(`${baseURL}/login`, data, config)
+  const responseData = axios.post(`${baseURL}login`, data, config)
     .then((response) => [response.status, response.data])
     .catch((error) => [error.response.status, error.response.data])
 
@@ -42,7 +42,7 @@ export async function login(data){
 }
 
 export async function updateNotes(data){
-  const responseData = axios.put(`${baseURL}/users/${data.id}`, data, config)
+  const responseData = axios.put(`${baseURL}users/${data.id}`, data, config)
     .then((response) => response.status)
     .catch((error) => error.response.status)
 
@@ -50,7 +50,7 @@ export async function updateNotes(data){
 }
 
 export async function register(data){
-  const responseData = axios.post(`${baseURL}/users`, data, config)
+  const responseData = axios.post(`${baseURL}users`, data, config)
     .then((response) => response.status)
     .catch((error) => error.response.status)
 
@@ -61,12 +61,12 @@ export async function file(formData){
 
   const configForm = {
     headers: {
-      "authorization": "secret",
+      "authorization": secret,
       "Content-Type": "multipart/form-data"
     }
   }
 
-  const responseData = axios.post(`${baseURL}/files`, formData, configForm)
+  const responseData = axios.post(`${baseURL}files`, formData, configForm)
     .then((response) => [response.status, response.data])
     .catch((error) => [error.response.status, error.response.data])
 
