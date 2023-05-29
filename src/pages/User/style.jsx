@@ -6,6 +6,11 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 `;
 
 export const InfoUser = styled.div`
@@ -21,6 +26,15 @@ export const InfoUser = styled.div`
 
   position: relative;
 
+  @media (max-width: 768px) {
+    flex-direction: row;
+    height: 128px;
+    width: 95%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 4px 4px;
+  }
+
 `;
 
 export const ProfilePic = styled.img`
@@ -30,12 +44,21 @@ export const ProfilePic = styled.img`
   margin-top: 24px;
   margin-bottom: 24px;
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 104px;
+    height: 104px;
+  }
 `;
 
 export const TextContent = styled.div`
   width: 80%;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 60%;
+  }
 `;
 
 export const Text = styled.h3`
@@ -64,6 +87,18 @@ export const Notes = styled.textarea`
   font-weight: 600;
   color: #0b1411;
   font-family: 'Quicksand', sans-serif;
+
+  @media (max-width: 768px) {
+    width: 95%;
+    max-width: 95%;
+    min-width: 95%;
+    margin: 0;
+    padding: 4px 4px;
+
+    height: 100%;
+    min-height: auto;
+    max-height: auto;
+  }
 `;
 
 export const Button = styled.button`
@@ -79,6 +114,11 @@ export const Button = styled.button`
     height: 32px;
     width: 32px;
     color: #d80909;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+    margin-right: 16px;
   }
 `;
 
