@@ -70,6 +70,11 @@ function User({setUserLogged}) {
         setLoading(false)
         return
       }
+
+      if(code === 400) {
+        setLoading(true)
+      }
+
       await localStorage.removeItem("userLogged")
       setUserLogged(false)
       navigate("/")
