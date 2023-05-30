@@ -72,6 +72,7 @@ function User({setUserLogged}) {
       }
 
       if(code === 400) {
+        console.log("Não salvou")
         setLoading(true)
       }
 
