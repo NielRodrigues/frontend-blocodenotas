@@ -63,6 +63,7 @@ function User({setUserLogged}) {
       }
 
       const [code, userData] = await login(dataLogin)
+      console.log(code)
 
       if(code === 200){
         setLoadingPage(false)
@@ -74,6 +75,7 @@ function User({setUserLogged}) {
       if(code === 400) {
         console.log("Não salvou")
         setLoading(true)
+        return
       }
 
       await localStorage.removeItem("userLogged")
